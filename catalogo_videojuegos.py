@@ -29,6 +29,27 @@ def agregar_elemento(catalogo):
     print(f"'{nombre}' agregado al catálogo.")
 
 
+def modificar_elemento(catalogo):
+    nombre = input("Nombre del videojuego a modificar: ")
+    if nombre not in catalogo:
+        print(f"No existe un elemento llamado '{nombre}'.")
+        return
+
+    print(f"Atributos de '{nombre}': {catalogo[nombre]}")
+    atributo = input("¿Qué atributo desea modificar? (genero/fecha/jugado): ")
+    if atributo not in catalogo[nombre]:
+        print(f"'{atributo}' no es un atributo válido.")
+        return
+
+    if atributo == "jugado":
+        nuevo_valor = input("Nuevo valor (s/n): ") == "s"
+    else:
+        nuevo_valor = input("Nuevo valor: ")
+
+    catalogo[nombre][atributo] = nuevo_valor
+    print(f"'{atributo}' de '{nombre}' actualizado.")
+
+
 flag = True
 while flag:
         opcion = input("BIENVENIDO A CATALOGO ARENAS RETRO \n"
@@ -42,7 +63,7 @@ while flag:
         elif opcion == "2":
             agregar_elemento(catalogo)
         elif opcion == "3":
-            print("Modificar elemento ")
+            modificar_elemento(catalogo)
         elif opcion == "4":
             print("¡Hasta luego!")
             flag = False
