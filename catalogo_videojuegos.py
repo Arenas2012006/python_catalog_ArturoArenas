@@ -1,6 +1,16 @@
 catalogo = {}
 
 
+def ver_elementos(catalogo):
+    if not catalogo:
+        print("El catálogo está vacío.")
+        return
+    for nombre, atributos in catalogo.items():
+        print(f"\n{nombre}")
+        for clave, valor in atributos.items():
+            print(f"  {clave}: {valor}")
+
+
 def agregar_elemento(catalogo):
     nombre = input("Nombre del videojuego: ")
     if nombre in catalogo:
@@ -28,7 +38,7 @@ while flag:
                        "4. Salir del programa\n "
                        "Que desea hacer? ")
         if opcion == "1":
-            print("Ver catálogo ")
+            ver_elementos(catalogo)
         elif opcion == "2":
             agregar_elemento(catalogo)
         elif opcion == "3":
