@@ -1,3 +1,13 @@
+import json
+from utils import read_db, save_db 
+DB_PATH = "catalogo.json"
+
+catalogo = read_db(DB_PATH)
+
+
+
+
+
 catalogo = {}
 
 def ver_elementos(catalogo):
@@ -68,3 +78,6 @@ while flag:
             flag = False
         else:
             print("  ✗ Opción inválida. Ingresá un número entre 1 y 4.")
+
+
+
