@@ -31,6 +31,7 @@ def agregar_elemento(catalogo):
         "fecha": fecha,
         "jugado": jugado,
     }
+    save_db(DB_PATH, catalogo)
     print(f"'{nombre}' agregado al catálogo.")
 
 
@@ -52,6 +53,7 @@ def modificar_elemento(catalogo):
         nuevo_valor = input("Nuevo valor: ")
 
     catalogo[nombre][atributo] = nuevo_valor
+    save_db(DB_PATH, catalogo)
     print(f"'{atributo}' de '{nombre}' actualizado.")
 
 
@@ -73,7 +75,7 @@ while flag:
             print("¡Hasta luego!")
             flag = False
         else:
-            print("  ✗ Opción inválida. Ingresá un número entre 1 y 4.")
+            print(" Opción inválida. Ingresá un número entre 1 y 4.")
 
 
 
