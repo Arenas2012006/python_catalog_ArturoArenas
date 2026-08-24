@@ -1,6 +1,5 @@
 catalogo = {}
 
-
 def ver_elementos(catalogo):
     if not catalogo:
         print("El catálogo está vacío.")
