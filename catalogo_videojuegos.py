@@ -2,12 +2,9 @@ import json
 from utils import read_db, save_db 
 DB_PATH = "catalogo.json"
 
+catalogo = read_db(DB_PATH)
 
 
-
-
-
-catalogo = {}
 
 def ver_elementos(catalogo):
     if not catalogo:
